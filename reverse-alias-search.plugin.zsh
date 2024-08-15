@@ -1,7 +1,7 @@
-# zsh-fzf-alias.plugin.zsh
+# zreverse-alias-search.plugin.zsh
 
 # Function definition
-function fzf-alias-widget() {
+function reverse-alias-search-widget() {
   # Use standard fzf executable or look for it
   local selected=$(alias | fzf \
     --query="$LBUFFER" \
@@ -28,11 +28,11 @@ function fzf-alias-widget() {
 }
 
 # Register the widget
-zle -N fzf-alias-widget
+zle -N reverse-alias-search-widget
 
 # Default Keybinding (Ctrl+xa)
 if [[ -z "$ZSH_FZF_ALIAS_BIND" ]]; then
-    bindkey '^o' fzf-alias-widget
+    bindkey '^o' reverse-alias-search-widget
 else
-    bindkey "$ZSH_FZF_ALIAS_BIND" fzf-alias-widget
+    bindkey "$ZSH_FZF_ALIAS_BIND" reverse-alias-search-widget
 fi
