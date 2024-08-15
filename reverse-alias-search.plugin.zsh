@@ -1,6 +1,5 @@
-# zreverse-alias-search.plugin.zsh
+#!/usr/bin/env zsh
 
-# Function definition
 function reverse-alias-search-widget() {
   # Use standard fzf executable or look for it
   local selected=$(alias | fzf \
@@ -14,13 +13,13 @@ function reverse-alias-search-widget() {
   )
 
   if [[ -n "$selected" ]]; then
-    # Extract the alias name (everything before the =)
+    # Extract the alias name
     local alias_name="${selected%%=*}"
     
     # Update the buffer to the left of the cursor
     LBUFFER="$alias_name"
 
-    # Move cursor to the and of the line
+    # Move cursor to the end of the line
     CURSOR=$#BUFFER
   fi
 
@@ -30,7 +29,7 @@ function reverse-alias-search-widget() {
 # Register the widget
 zle -N reverse-alias-search-widget
 
-# Default Keybinding (Ctrl+xa)
+# Default Keybinding (Ctrl+o)
 if [[ -z "$ZSH_FZF_ALIAS_BIND" ]]; then
     bindkey '^o' reverse-alias-search-widget
 else
