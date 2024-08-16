@@ -2,8 +2,10 @@
 
 function reverse-alias-search-widget() {
   # Use standard fzf executable or look for it
+  local current_query="${LBUFFER}${RBUFFER[1]}"
+
   local selected=$(alias | fzf \
-    --query="$LBUFFER" \
+    --query="$current_query" \
     --delimiter='=' \
     --preview='echo {2}' \
     --preview-window=down:3:wrap \
@@ -19,8 +21,8 @@ function reverse-alias-search-widget() {
     # Update the buffer to the left of the cursor
     LBUFFER="$alias_name"
 
-    # Move cursor to the end of the line
-    CURSOR=$#BUFFER
+    # Remove the first character from RBUFFER if it exists
+    RBUFFER="${RBUFFER:1}"
   fi
 
   zle redisplay
