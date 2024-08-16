@@ -1,4 +1,4 @@
-# zsh-fzf-alias
+# reverse-alias-search
 
 A lightweight Zsh plugin that allows you to "reverse search" your aliases using [fzf](https://github.com/junegunn/fzf).
 
@@ -24,9 +24,9 @@ Type a command (or part of one), press the hotkey, and select the matching alias
 Add the following to your `.zshrc` where you load your bundles:
 
 ```zsh
-antigen bundle <your-username>/zsh-fzf-alias
+antigen bundle forksofpower/reverse-alias-search
 # OR if loading locally:
-# antigen bundle /path/to/local/zsh-fzf-alias
+# antigen bundle /path/to/local/reverse-alias-search
 
 ```
 
@@ -34,14 +34,14 @@ antigen bundle <your-username>/zsh-fzf-alias
 
 1. Clone this repository into your custom plugins directory:
 ```bash
-git clone https://github.com/<your-username>/zsh-fzf-alias ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-fzf-alias
+git clone https://github.com/forksofpower/reverse-alias-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/reverse-alias-search
 
 ```
 
 
 2. Add the plugin to the list of plugins in your `.zshrc`:
 ```zsh
-plugins=(... zsh-fzf-alias)
+plugins=(... reverse-alias-search)
 
 ```
 
@@ -50,7 +50,7 @@ plugins=(... zsh-fzf-alias)
 ### Zplug
 
 ```zsh
-zplug "<your-username>/zsh-fzf-alias"
+zplug "forksofpower/reverse-alias-search"
 
 ```
 
@@ -58,14 +58,14 @@ zplug "<your-username>/zsh-fzf-alias"
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/<your-username>/zsh-fzf-alias ~/zsh-fzf-alias
+git clone https://github.com/forksofpower/reverse-alias-search ~/reverse-alias-search
 
 ```
 
 
 2. Source the script in your `.zshrc`:
 ```zsh
-source ~/zsh-fzf-alias/zsh-fzf-alias.plugin.zsh
+source ~/reverse-alias-search/reverse-alias-search.plugin.zsh
 
 ```
 
@@ -92,6 +92,6 @@ The default keybinding is **`Ctrl+o`**. You can override this by defining `ZSH_F
 export ZSH_FZF_ALIAS_BIND='^[a'
 
 # Load the plugin
-antigen bundle <your-username>/zsh-fzf-alias
+antigen bundle forksofpower/reverse-alias-search
 
 ```
