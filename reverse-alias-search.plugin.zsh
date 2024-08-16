@@ -32,7 +32,7 @@ zle -N fzf-alias-widget
 
 # Default Keybinding (Ctrl+xa)
 if [[ -z "$ZSH_FZF_ALIAS_BIND" ]]; then
-    bindkey '^xa' fzf-alias-widget
+    bindkey '^o' fzf-alias-widget
 else
     bindkey "$ZSH_FZF_ALIAS_BIND" fzf-alias-widget
 fi
